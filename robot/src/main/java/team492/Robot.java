@@ -34,7 +34,7 @@ import edu.wpi.first.wpilibj.Sendable;
 import edu.wpi.first.wpilibj.SerialPort;
 import edu.wpi.first.wpilibj.smartdashboard.SendableBuilder;
 import frclib.FrcAHRSGyro;
-import frclib.FrcCANSparkMax;
+import frclib.FrcCANTalon;
 import frclib.FrcEmic2TextToSpeech;
 import frclib.FrcI2cLEDPanel;
 import frclib.FrcJoystick;
@@ -127,10 +127,10 @@ public class Robot extends FrcRobotBase
     //
     // DriveBase subsystem.
     //
-    public FrcCANSparkMax leftFrontWheel;
-    public FrcCANSparkMax leftRearWheel;
-    public FrcCANSparkMax rightFrontWheel;
-    public FrcCANSparkMax rightRearWheel;
+    public FrcCANTalon leftFrontWheel;
+    public FrcCANTalon leftRearWheel;
+    public FrcCANTalon rightFrontWheel;
+    public FrcCANTalon rightRearWheel;
     public TrcMecanumDriveBase driveBase;
 
     public TrcPidController encoderXPidCtrl;
@@ -188,15 +188,16 @@ public class Robot extends FrcRobotBase
         {
             gyro = new FrcAHRSGyro("NavX", SPI.Port.kMXP);
         }
+        System.out.println("Initialized AHRS Gyro UWU");
 
         //
         // DriveBase subsystem.
         //
         driveInverted = false;
-        leftFrontWheel = new FrcCANSparkMax("LeftFrontWheel", RobotInfo.CANID_LEFTFRONTWHEEL, true);
-        leftRearWheel = new FrcCANSparkMax("LeftRearWheel", RobotInfo.CANID_LEFTREARWHEEL, true);
-        rightFrontWheel = new FrcCANSparkMax("RightFrontWheel", RobotInfo.CANID_RIGHTFRONTWHEEL, true);
-        rightRearWheel = new FrcCANSparkMax("RightRearWheel", RobotInfo.CANID_RIGHTREARWHEEL, true);
+        leftFrontWheel = new FrcCANTalon("LeftFrontWheel", RobotInfo.CANID_LEFTFRONTWHEEL);
+        leftRearWheel = new FrcCANTalon("LeftRearWheel", RobotInfo.CANID_LEFTREARWHEEL);
+        rightFrontWheel = new FrcCANTalon("RightFrontWheel", RobotInfo.CANID_RIGHTFRONTWHEEL);
+        rightRearWheel = new FrcCANTalon("RightRearWheel", RobotInfo.CANID_RIGHTREARWHEEL);
         setHalfBrakeModeEnabled(true); // Karkeys prefers front coast, back brake
 
         pdp.registerEnergyUsed(new FrcPdp.Channel(RobotInfo.PDP_CHANNEL_LEFT_FRONT_WHEEL, "LeftFrontWheel"),
@@ -217,11 +218,12 @@ public class Robot extends FrcRobotBase
         rightFrontWheel.setPositionSensorInverted(false);
         rightRearWheel.setPositionSensorInverted(false);
 
+        /*
         leftFrontWheel.motor.enableVoltageCompensation(RobotInfo.BATTERY_NOMINAL_VOLTAGE);
         rightFrontWheel.motor.enableVoltageCompensation(RobotInfo.BATTERY_NOMINAL_VOLTAGE);
         leftRearWheel.motor.enableVoltageCompensation(RobotInfo.BATTERY_NOMINAL_VOLTAGE);
         rightRearWheel.motor.enableVoltageCompensation(RobotInfo.BATTERY_NOMINAL_VOLTAGE);
-
+        */
         //
         // Initialize DriveBase subsystem.
         //
@@ -261,6 +263,8 @@ public class Robot extends FrcRobotBase
         setupRobotModes(new FrcTeleOp(this), autoMode, new FrcTest(this), new FrcDisabled(this));
 
         pdp.registerEnergyUsedForAllUnregisteredChannels();
+        
+        System.out.println("RobotInit finished");
     }   //robotInit
 
     public void robotStartMode(RunMode runMode, RunMode prevMode)

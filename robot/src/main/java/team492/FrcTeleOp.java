@@ -48,7 +48,6 @@ public class FrcTeleOp implements TrcRobot.RobotMode
 
     private DriveSpeed driveSpeed = DriveSpeed.MEDIUM;
     private DriveMode driveMode = DriveMode.MECANUM_MODE;
-    private TrcLoopTimeCounter loopTimeCounter;
 
     public FrcTeleOp(Robot robot)
     {
@@ -81,11 +80,13 @@ public class FrcTeleOp implements TrcRobot.RobotMode
     {
         if (DEBUG_LOOP_TIME)
         {
+            /*
             loopTimeCounter.update();
             robot.dashboard
                 .displayPrintf(1, "Period: %.3f/%.3f/%3f, Frequency: %.2f/%.2f/%.2f", loopTimeCounter.getMinPeriod(),
                     loopTimeCounter.getPeriod(), loopTimeCounter.getMaxPeriod(), loopTimeCounter.getMinFrequency(),
                     loopTimeCounter.getFrequency(), loopTimeCounter.getMaxFrequency());
+            */
         }
     } // runContinuous
 
