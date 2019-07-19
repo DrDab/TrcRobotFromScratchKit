@@ -79,7 +79,7 @@ public class FrcTest extends FrcTeleOp
         // Create and populate Test Mode specific menus.
         //
         testMenu = new FrcChoiceMenu<>("Test/Tests");
-        testMenu.addChoice("Sensors Test", FrcTest.Test.SENSORS_TEST, true, false);
+        testMenu.addChoice("Sensors Test", FrcTest.Test.SENSORS_TEST);
         testMenu.addChoice("Subsystems Test", FrcTest.Test.SUBSYSTEMS_TEST);
         testMenu.addChoice("Drive Motors Test", FrcTest.Test.DRIVE_MOTORS_TEST);
         testMenu.addChoice("X Timed Drive", FrcTest.Test.X_TIMED_DRIVE);
@@ -89,7 +89,7 @@ public class FrcTest extends FrcTeleOp
         testMenu.addChoice("Turn Degrees", FrcTest.Test.TURN_DEGREES);
         testMenu.addChoice("Tune X PID", FrcTest.Test.TUNE_X_PID);
         testMenu.addChoice("Tune Y PID", FrcTest.Test.TUNE_Y_PID);
-        testMenu.addChoice("Tune Turn PID", FrcTest.Test.TUNE_TURN_PID);
+        testMenu.addChoice("Tune Turn PID", FrcTest.Test.TUNE_TURN_PID, false, true);
         System.out.println("FrcTest initialized");
     } // FrcTest
 
