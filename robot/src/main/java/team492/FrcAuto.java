@@ -33,7 +33,7 @@ import trclib.TrcTaskMgr;
 public class FrcAuto extends FrcTeleOp
 {
     private static final String moduleName = "FrcAuto";
-    private static final boolean DO_UPDATES = false;
+    private static final boolean DO_UPDATES = true;
 
     public enum AutoStrategy
     {
@@ -69,6 +69,7 @@ public class FrcAuto extends FrcTeleOp
         autoStrategyMenu.addChoice("Y Distance Drive", AutoStrategy.Y_DISTANCE_DRIVE);
         autoStrategyMenu.addChoice("Turn Degrees", AutoStrategy.TURN_DEGREES);
         autoStrategyMenu.addChoice("Do Nothing", AutoStrategy.DO_NOTHING, false, true);
+        System.out.println("FrcAuto initialized");
     } // FrcAuto
 
     // CodeReview: Where is the auto tie-in???
@@ -154,6 +155,7 @@ public class FrcAuto extends FrcTeleOp
     {
         if (DO_UPDATES)
         {
+            System.out.println("UPDATING DASHBOARD OWO");
             robot.updateDashboard(RunMode.AUTO_MODE);
         }
 

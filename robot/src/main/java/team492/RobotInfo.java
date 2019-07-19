@@ -118,7 +118,7 @@ public class RobotInfo
     public static final double ENCODER_X_KF_SMALL               = 0.0;
     public static final double ENCODER_X_TOLERANCE_SMALL        = 0.0;
 
-    public static final double ENCODER_Y_INCHES_PER_COUNT       = 0.0;
+    public static final double ENCODER_Y_INCHES_PER_COUNT       = 0.0210974684; //0.021276636; //0.0209186567;
     public static final double ENCODER_Y_KP                     = 0.0;
     public static final double ENCODER_Y_KI                     = 0.0;
     public static final double ENCODER_Y_KD                     = 0.0;

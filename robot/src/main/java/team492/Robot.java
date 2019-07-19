@@ -76,7 +76,7 @@ public class Robot extends FrcRobotBase
     public static final boolean USE_STREAM_CAMERA = true;
 
     private static final boolean DEBUG_POWER_CONSUMPTION = false;
-    private static final boolean DEBUG_DRIVE_BASE = false;
+    private static final boolean DEBUG_DRIVE_BASE = true;
     private static final boolean DEBUG_PID_DRIVE = false;
     private static final boolean DEBUG_SUBSYSTEMS = false;
     private static final boolean DEBUG_PIXY = false;
@@ -469,6 +469,9 @@ public class Robot extends FrcRobotBase
                 double rfEnc = rightFrontWheel.getPosition();
                 double lrEnc = leftRearWheel.getPosition();
                 double rrEnc = rightRearWheel.getPosition();
+                //System.out.printf("DriveBase: lf=%.0f, rf=%.0f, lr=%.0f, rr=%.0f, avg=%.0f\n", lfEnc, rfEnc, lrEnc,
+                //rrEnc, (lfEnc + rfEnc + lrEnc + rrEnc) / 4.0);
+                //System.out.printf("DriveBase: X=%.1f, Y=%.1f, Heading=%.1f\n", xPos, yPos, heading);
 
                 dashboard
                     .displayPrintf(8, "DriveBase: lf=%.0f, rf=%.0f, lr=%.0f, rr=%.0f, avg=%.0f", lfEnc, rfEnc, lrEnc,
