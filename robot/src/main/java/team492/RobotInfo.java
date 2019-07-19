@@ -105,7 +105,7 @@ public class RobotInfo
     public static final double DRIVE_MAX_YPID_RAMP_RATE         = 0.6;
     public static final double DRIVE_MAX_TURNPID_RAMP_RATE      = 1.0;
     
-    public static final double ENCODER_X_INCHES_PER_COUNT       = 0.0;
+    public static final double ENCODER_X_INCHES_PER_COUNT       = 0.020045819;
     public static final double ENCODER_X_KP                     = 0.0;
     public static final double ENCODER_X_KI                     = 0.0;
     public static final double ENCODER_X_KD                     = 0.0;
