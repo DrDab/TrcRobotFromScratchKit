@@ -105,7 +105,7 @@ public class RobotInfo
     public static final double DRIVE_MAX_YPID_RAMP_RATE         = 0.6;
     public static final double DRIVE_MAX_TURNPID_RAMP_RATE      = 1.0;
     
-    public static final double ENCODER_X_INCHES_PER_COUNT       = 0.020045819;
+    public static final double ENCODER_X_INCHES_PER_COUNT       = 0.020045819; // last calibrated 9:06 PM PST, 7/18/2019, 1 trial
     public static final double ENCODER_X_KP                     = 0.0;
     public static final double ENCODER_X_KI                     = 0.0;
     public static final double ENCODER_X_KD                     = 0.0;
@@ -118,7 +118,7 @@ public class RobotInfo
     public static final double ENCODER_X_KF_SMALL               = 0.0;
     public static final double ENCODER_X_TOLERANCE_SMALL        = 0.0;
 
-    public static final double ENCODER_Y_INCHES_PER_COUNT       = 0.0210974684; //0.021276636; //0.0209186567;
+    public static final double ENCODER_Y_INCHES_PER_COUNT       = 0.0210974684; // last calibrated 8:41 PM PST, 7/18/2019, avg. of 3 trials //0.021276636; //0.0209186567;
     public static final double ENCODER_Y_KP                     = 0.0;
     public static final double ENCODER_Y_KI                     = 0.0;
     public static final double ENCODER_Y_KD                     = 0.0;
