@@ -107,10 +107,7 @@ public class FrcTest extends FrcTeleOp
         //
         // Retrieve menu choice values.
         //
-        //test = testMenu.getCurrentChoiceObject();
-        // ashoidfjds;ah8w9tj0q3j0j2q8950pr98ug8osd;fjsaifjoisajoifjsdnbsakfd
-        test = Test.X_TIMED_DRIVE; // I left off here! Remove this asjfoiaha9gjoisafhsa;oifgsa;ut2398y9tweahfusahfi
-        // afdjasot943q9tghhoi3qjjotj3o4jt34qlerg;aljgalfjsla;fnsa;lfj;
+        test = testMenu.getCurrentChoiceObject();
 
         robot.gyroTurnPidCtrl.setNoOscillation(false);
         robot.gyroTurnPidCtrl.setTargetTolerance(RobotInfo.GYRO_TURN_TOLERANCE);
@@ -197,7 +194,7 @@ public class FrcTest extends FrcTeleOp
     @Override
     public void runPeriodic(double elapsedTime)
     {
-        robot.updateDashboard(RunMode.TEST_MODE);
+        //robot.updateDashboard(RunMode.TEST_MODE);
         switch (test)
         {
             case SENSORS_TEST:

@@ -155,7 +155,6 @@ public class FrcAuto extends FrcTeleOp
     {
         if (DO_UPDATES)
         {
-            System.out.println("UPDATING DASHBOARD OWO");
             robot.updateDashboard(RunMode.AUTO_MODE);
         }
 
